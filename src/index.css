@@ -1,0 +1,65 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d1117;
+  --surface:   #161b22;
+  --card:      #1c2128;
+  --elevated:  #21262d;
+  --border:    #30363d;
+  --border2:   #21262d;
+  --accent:    #2f81f7;
+  --accent2:   #58a6ff;
+  --accentbg:  rgba(47,129,247,0.12);
+  --success:   #3fb950;
+  --warning:   #d29922;
+  --danger:    #f85149;
+  --purple:    #a371f7;
+  --text1:     #e6edf3;
+  --text2:     #8b949e;
+  --text3:     #484f58;
+  --ff-head:   'Poppins', sans-serif;
+  --ff-body:   'Inter', sans-serif;
+  --r1: 6px; --r2: 10px; --r3: 16px;
+}
+
+html { font-size: 15px; }
+body {
+  font-family: var(--ff-body);
+  background: var(--bg);
+  color: var(--text1);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+h1,h2,h3,h4 { font-family: var(--ff-head); line-height: 1.25; }
+a { color: var(--accent2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+input, textarea, select {
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  color: var(--text1);
+  border-radius: var(--r1);
+  padding: 0.6rem 0.85rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47,129,247,0.15);
+}
+input::placeholder, textarea::placeholder { color: var(--text3); }
+select option { background: var(--elevated); }
+button { cursor: pointer; font-family: var(--ff-body); border: none; outline: none; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin    { to { transform: rotate(360deg); } }
+.fade-up { animation: fadeUp 0.3s ease both; }
